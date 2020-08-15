@@ -84,7 +84,7 @@ class App : Application(), DIAware {
     }
 
     private fun checkOrder() {
-                isOrderSuccess = false
+                isOrderSuccess = true
     }
 
     private fun checkOrderFromCache() {
