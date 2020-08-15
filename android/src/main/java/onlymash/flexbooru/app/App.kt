@@ -84,20 +84,7 @@ class App : Application(), DIAware {
     }
 
     private fun checkOrder() {
-        val isPlayVersion = getSignMd5() == "777296a0fe4baa88c783d1cb18bdf1f2"
-        isGoogleSign = isPlayVersion
-        if (isPlayVersion) {
-            checkOrderFromCache()
-        } else {
-            val id = orderId
-            if (id.isNotEmpty()) {
-                GlobalScope.launch {
-                    OrderApi.orderChecker(id, orderDeviceId)
-                }
-            } else {
                 isOrderSuccess = false
-            }
-        }
     }
 
     private fun checkOrderFromCache() {
